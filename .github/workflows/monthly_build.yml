@@ -16,7 +16,7 @@ jobs:
           - name: Monthly build
             uses: elgohr/Publish-Docker-Github-Action@master
             with:
-              name: monolithprojects/systemd-rockylinux8
+              name: monolithprojects/systemd-rockylinux9
               username: monolithprojects
               password: ${{ secrets.TOKEN }}
               registry: docker.io
