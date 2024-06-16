@@ -1,0 +1,22 @@
+name: Publish Image
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+          - name: Publish
+            uses: elgohr/Publish-Docker-Github-Action@master
+            with:
+              name: monolithprojects/systemd-rockylinux9
+              username: monolithprojects
+              password: ${{ secrets.TOKEN }}
+              tagging: true
+              registry: docker.io
+              dockerfile: Dockerfile
